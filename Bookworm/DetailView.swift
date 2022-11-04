@@ -36,6 +36,11 @@ struct DetailView: View {
                 .font(.title)
                 .foregroundColor(.secondary)
 
+            let date = book.date ?? Date()
+            Text(date.formatted(.dateTime.day().month().year()))
+                .foregroundColor(.secondary)
+                .opacity(date == book.date ? 1 : 0)
+            
             Text(book.review ?? "No review")
                 .padding()
 
